@@ -5,6 +5,7 @@ import LoginControl from './js/components/LoginControl';
 import ListItems from './js/components/ListItems';
 import CustomForm from './js/components/CustomForm';
 import Calculator from './js/components/Calculator';
+import WelcomeDialog from './js/components/WelcomeDialog';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
         <ListItems numbers={[1, 2, 3, 4, 5]} />
         <CustomForm />
         <Calculator />
+        <WelcomeDialog />
       </div>
     );
   }
