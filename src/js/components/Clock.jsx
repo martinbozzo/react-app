@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 class Clock extends Component {
   constructor(props) {
     super(props);
-    this.state = { date: new Date() };
+    this.state = { date: new Date(), isToggleOn: true };
+    this.handleToggleClick = this.handleToggleClick.bind(this);
   }
 
   componentDidMount() {
@@ -14,6 +15,12 @@ class Clock extends Component {
     clearInterval(this.timerID);
   }
 
+  handleToggleClick = () => {
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn
+    }));
+  };
+
   tick() {
     this.setState({
       date: new Date()
@@ -23,7 +30,10 @@ class Clock extends Component {
   render() {
     return (
       <div>
-        <h2>It is {this.state.date.toLocaleTimeString()}</h2>
+        <h2>{this.state.date.toLocaleTimeString()}</h2>
+        <button onClick={this.handleToggleClick}>
+          {this.state.isToggleOn ? 'ON' : 'OFF'}
+        </button>
       </div>
     );
   }

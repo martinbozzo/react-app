@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Clock from './js/components/Clock';
-import Toggle from './js/components/Toggle';
 import LoginControl from './js/components/LoginControl';
+import WarningBanner from './js/components/WarningBanner';
 
-function App() {
-  return (
-    <div>
-      <Clock />
-      <Toggle />
-      <LoginControl />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Clock />
+        <LoginControl />
+      </div>
+    );
+  }
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
