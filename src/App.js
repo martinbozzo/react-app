@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Clock from './js/components/Clock';
 import LoginControl from './js/components/LoginControl';
-import WarningBanner from './js/components/WarningBanner';
+import ListItems from './js/components/ListItems';
+import CustomForm from './js/components/CustomForm';
 
 class App extends Component {
   render() {
@@ -10,6 +11,8 @@ class App extends Component {
       <div>
         <Clock />
         <LoginControl />
+        <ListItems numbers={[1, 2, 3, 4, 5]} />
+        <CustomForm />
       </div>
     );
   }
