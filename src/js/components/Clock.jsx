@@ -16,6 +16,9 @@ class Clock extends Component {
   }
 
   handleToggleClick = () => {
+    if (this.state.isToggleOn) {
+      console.log('Se apagaaaa');
+    }
     this.setState(state => ({
       isToggleOn: !state.isToggleOn
     }));
