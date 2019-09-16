@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+
+import ErrorBoundary from './js/components/ErrorBoundary';
 import Clock from './js/components/Clock';
 import LoginControl from './js/components/LoginControl';
 import ListItems from './js/components/ListItems';
@@ -33,7 +35,7 @@ class App extends Component {
     // uses the theme from state while the one outside uses
     // the default dark theme
     return (
-      <div>
+      <ErrorBoundary>
         <Clock />
         <LoginControl />
         <ListItems numbers={[1, 2, 3, 4, 5]} />
@@ -43,7 +45,7 @@ class App extends Component {
         <ThemeContext.Provider value={this.state.theme}>
           <Toolbar changeTheme={this.toggleTheme} />
         </ThemeContext.Provider>
-      </div>
+      </ErrorBoundary>
     );
   }
 }
