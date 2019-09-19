@@ -10,6 +10,7 @@ import Calculator from './js/components/Calculator';
 import WelcomeDialog from './js/components/WelcomeDialog';
 import { ThemeContext, themes } from './js/components/theme-context';
 import ThemedButton from './js/components/themed-button';
+import TicTacToeGame from './js/components/tic-tac-toe/Game';
 
 // An intermediate component that uses the ThemedButton
 function Toolbar(props) {
@@ -45,6 +46,7 @@ class App extends Component {
         <ThemeContext.Provider value={this.state.theme}>
           <Toolbar changeTheme={this.toggleTheme} />
         </ThemeContext.Provider>
+        <TicTacToeGame />
       </ErrorBoundary>
     );
   }
